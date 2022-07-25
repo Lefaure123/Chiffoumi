@@ -4,9 +4,10 @@ woch = "W"
 sizo = "S"
 papye = "P"
 
-print()
-print('** Byenvini nan jwet Chifoumi osinon woch, papye, sizo **\n')
+lis_chwa = ['W', 'S', 'P']
 
+print()
+print('** Byenvini nan jwet Chifoumi osinon woch (W), papye(P), sizo(S) **\n')
 
 chans = 10
 while chans > 0:
@@ -20,8 +21,5 @@ while chans > 0:
             print("Reeseye, chwazi ant W, S, P ")
     chans -= 1
 
-
-
-
-
-
+chwa_odinate_a = random.choice(lis_chwa)
+print("Computer a chwazi ==> ", chwa_odinate_a)
