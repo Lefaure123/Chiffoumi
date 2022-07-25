@@ -41,7 +41,9 @@ print("Computer a chwazi ==> ", chwa_odinate_a)
 #         print(f'{name} ou pedi\n')
 #         sko_jwe_a -= 50
 
-
+if chwa_odinate_a == woch and antre == sizo:
+    sko_computer_a += 50
+    print(f'computer score = {sko_computer_a} ')
 
 
 
