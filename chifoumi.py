@@ -11,6 +11,7 @@ print()
 print('** Byenvini nan jwet Chifoumi osinon woch (W), papye(P), sizo(S) **\n')
 
 name = input("Se kiyes kap jwe a svp : ")
+print()
 sko_jwe_a = 0
 sko_computer_a = 0
 
@@ -31,22 +32,39 @@ chwa_odinate_a = random.choice(lis_chwa)
 print("Computer a chwazi ==> ", chwa_odinate_a)
 
 
-# def gameException():
-#     global sko_jwe_a
-#     sko_jwe_a = 0
-#     if antre == papye and chwa_odinate_a == woch:
-#         print(f'{name} ou genyen\n')
-#         sko_jwe_a += 50
-#     elif antre == woch and chwa_odinate_a == papye:
-#         print(f'{name} ou pedi\n')
-#         sko_jwe_a -= 50
+def noChange():
+    if sko_jwe_a < 0:
+        return 0
+
+
+def egalityGame():
+    if chwa_odinate_a == antre:
+        print('Match nul, rejwe svp')
+
 
 if chwa_odinate_a == woch and antre == sizo:
-    sko_computer_a += 50
-    print(f'computer score = {sko_computer_a} ')
+    sko_jwe_a -= 50
+    print('Computer win', ',' f'{name} loose')
+    if sko_jwe_a < 0:
+        noChange()
+elif chwa_odinate_a == sizo and antre == papye:
+    print('Computer win', ',' f'{name} loose')
+    if sko_jwe_a < 0:
+        noChange()
+elif chwa_odinate_a == papye and antre == woch:
+    print('computer win', ',' f'{name} loose')
+    if sko_jwe_a < 0:
+        noChange()
 
+if antre == woch and chwa_odinate_a == sizo:
+    sko_jwe_a += 50
+    print(f'{name} win ', f' ==> score = {sko_jwe_a}')
+elif antre == sizo and chwa_odinate_a == papye:
+    sko_jwe_a += 50
+    print(f'{name} win ', f' ==> score = {sko_jwe_a}')
+elif antre == papye and chwa_odinate_a == woch:
+    sko_jwe_a += 50
+    print(f'{name} win ', f' ==> score = {sko_jwe_a}')
 
-
-
-
-
+if antre == chwa_odinate_a:
+    egalityGame()
