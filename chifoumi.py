@@ -1,4 +1,5 @@
 import random
+import time
 
 woch = "W"
 sizo = "S"
@@ -8,6 +9,10 @@ lis_chwa = ['W', 'S', 'P']
 
 print()
 print('** Byenvini nan jwet Chifoumi osinon woch (W), papye(P), sizo(S) **\n')
+
+name = input("Se kiyes kap jwe a svp : ")
+sko_jwe_a = 0
+sko_computer_a = 0
 
 chans = 10
 while chans > 0:
@@ -24,5 +29,22 @@ while chans > 0:
 
 chwa_odinate_a = random.choice(lis_chwa)
 print("Computer a chwazi ==> ", chwa_odinate_a)
+
+
+# def gameException():
+#     global sko_jwe_a
+#     sko_jwe_a = 0
+#     if antre == papye and chwa_odinate_a == woch:
+#         print(f'{name} ou genyen\n')
+#         sko_jwe_a += 50
+#     elif antre == woch and chwa_odinate_a == papye:
+#         print(f'{name} ou pedi\n')
+#         sko_jwe_a -= 50
+
+
+
+
+
+
 
 
