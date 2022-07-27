@@ -1,4 +1,5 @@
 import random
+import pickle
 
 woch = "W"
 sizo = "S"
@@ -14,6 +15,7 @@ print()
 
 sko_computer_a = 0
 sko_jwe_a = 0
+
 chwa_odinate_a = random.choice(lis_chwa)
 
 
@@ -58,7 +60,7 @@ while chans > 0:
 
         print()
 
-# Nan ka ke se jwe a kap genyen
+    # Nan ka ke se jwe a kap genyen
 
     if antre == woch and chwa_odinate_a == sizo:
         sko_jwe_a += 50
@@ -90,6 +92,15 @@ while chans > 0:
     if antre == chwa_odinate_a:
         egalityGame()
     if str(antre) == 'K' or str(antre) == 'k':
+        fichye_mwen = open("file.txt", "wb")
+        score_dict = {f'{name}': f'{sko_jwe_a}'}
+        pickle.dump(score_dict, fichye_mwen)
+        fichye_mwen.close()
+
+        fichye_mwen = open("file.txt", "rb")
+        score_dict = pickle.load(fichye_mwen)
+        fichye_mwen.close()
+        print(score_dict)
         exit()
     elif str(antre) == 'H' or str(antre) == 'h':
         print("Byenvini nan jwet Woch, Papye, Sizo : \n"
@@ -103,3 +114,6 @@ while chans > 0:
             print("__Reeseye__")
 
     chans += 1
+
+
+
