@@ -1,5 +1,4 @@
 import random
-import time
 
 woch = "W"
 sizo = "S"
@@ -8,7 +7,7 @@ papye = "P"
 lis_chwa = ['W', 'S', 'P']
 
 print()
-print('** Byenvini nan jwet Chifoumi osinon woch (W), papye(P), sizo(S) **\n')
+print('**** Byenvini nan jwet Chifoumi osinon woch(W), papye(P), sizo(S) ****\n')
 
 name = input("Se kiyes kap jwe a svp : ")
 print()
@@ -18,9 +17,11 @@ sko_jwe_a = 0
 chwa_odinate_a = random.choice(lis_chwa)
 
 
+#  fonksyon ke nap bezwen nan pwogram nan
 def noChange():
-    if sko_jwe_a < 0:
+    if sko_jwe_a <= 0:
         return 0
+    print(0)
 
 
 def egalityGame():
@@ -29,27 +30,35 @@ def egalityGame():
         print('Match nul, rejwe svp___\n')
 
 
+#  Nan ka ke se computer a kp genyen
 chans = 10
 while chans > 0:
     antre = input("chwazi oubyen rechwazi youn nan opsyon sa yo W,P,S : ")
     if chwa_odinate_a == woch and antre == sizo:
-        sko_jwe_a -= 50
+        if sko_jwe_a == 0:
+            noChange()
+        else:
+            sko_jwe_a -= 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print('Computer win', ',' f'{name} loose', ',' f'==> score = {sko_jwe_a}\n')
-        if sko_jwe_a < 0:
-            noChange()
     elif chwa_odinate_a == sizo and antre == papye:
+        if sko_jwe_a == 0:
+            noChange()
+        else:
+            sko_jwe_a -= 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print('Computer win', ',' f'{name} loose', ',' f'==> score = {sko_jwe_a}\n')
-        if sko_jwe_a < 0:
-            noChange()
     elif chwa_odinate_a == papye and antre == woch:
+        if sko_jwe_a == 0:
+            noChange()
+        else:
+            sko_jwe_a -= 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print('computer win', ',' f'{name} loose', f'==> score = {sko_jwe_a}\n')
-        if sko_jwe_a < 0:
-            noChange()
 
         print()
+
+# Nan ka ke se jwe a kap genyen
 
     if antre == woch and chwa_odinate_a == sizo:
         sko_jwe_a += 50
@@ -93,20 +102,4 @@ while chans > 0:
             print()
             print("__Reeseye__")
 
-    chans -= 1
-
-print("Computer a chwazi ==> ", chwa_odinate_a)
-
-# def playAgain():
-#     if antre and chwa_odinate_a:
-#         return antre
-
-
-# Le se Computer a ki genyen
-
-
-# Le se jwe a ki genyen
-
-
-# while antre != 'K' or antre != 'k':
-#     playAgain()
+    chans += 1
