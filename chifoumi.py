@@ -92,13 +92,14 @@ while chans > 0:
     if antre == chwa_odinate_a:
         egalityGame()
     if str(antre) == 'K' or str(antre) == 'k':
-        fichye_mwen = open("file.txt", "wb")
+        fichye_mwen = open("file.txt", "wb+")
         score_dict = {f'{name}': f'{sko_jwe_a}'}
         pickle.dump(score_dict, fichye_mwen)
         fichye_mwen.close()
 
         fichye_mwen = open("file.txt", "rb")
         score_dict = pickle.load(fichye_mwen)
+        score_dict.update()
         fichye_mwen.close()
         print(score_dict)
         exit()
