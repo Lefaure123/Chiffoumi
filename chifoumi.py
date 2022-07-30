@@ -66,16 +66,8 @@ while chans > 0:
         sko_jwe_a += 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
-    elif antre == woch.lower() and chwa_odinate_a == sizo.lower():
-        sko_jwe_a += 50
-        print("Computer a chwazi ==> ", chwa_odinate_a)
-        print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
 
     elif antre == sizo and chwa_odinate_a == papye:
-        sko_jwe_a += 50
-        print("Computer a chwazi ==> ", chwa_odinate_a)
-        print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
-    elif antre == sizo.lower() and chwa_odinate_a == papye.lower():
         sko_jwe_a += 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
@@ -84,22 +76,17 @@ while chans > 0:
         sko_jwe_a += 50
         print("Computer a chwazi ==> ", chwa_odinate_a)
         print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
-    elif antre == papye.lower() and chwa_odinate_a == woch.lower():
-        sko_jwe_a += 50
-        print("Computer a chwazi ==> ", chwa_odinate_a)
-        print(f'{name} win ', f' ==> score = {sko_jwe_a}\n')
 
     if antre == chwa_odinate_a:
         egalityGame()
     if str(antre) == 'K' or str(antre) == 'k':
-        fichye_mwen = open("file.txt", "wb+")
+        fichye_mwen = open("file.txt", "ab")
         score_dict = {f'{name}': f'{sko_jwe_a}'}
         pickle.dump(score_dict, fichye_mwen)
         fichye_mwen.close()
 
         fichye_mwen = open("file.txt", "rb")
         score_dict = pickle.load(fichye_mwen)
-        score_dict.update()
         fichye_mwen.close()
         print(score_dict)
         exit()
@@ -116,5 +103,15 @@ while chans > 0:
 
     chans += 1
 
-
-
+# def dataBase():
+#     global anrejistre
+#     score_dict = {f'{name}': f'{sko_jwe_a}'}
+#     with open("file.txt", "rb") as f:
+#         while True:
+#             try:
+#                 anrejistre = pickle.load(score_dict)
+#             except EOFError:
+#                 break
+#             else:
+#                 score_dict.update()
+# dataBase()
