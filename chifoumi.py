@@ -87,8 +87,8 @@ while chans > 0:
 
         fichye_mwen = open("file.txt", "rb")
         score_dict = pickle.load(fichye_mwen)
+        print({f'{name}': f'{sko_jwe_a}'})
         fichye_mwen.close()
-        print(score_dict)
         exit()
     elif str(antre) == 'H' or str(antre) == 'h':
         print("Byenvini nan jwet Woch, Papye, Sizo : \n"
@@ -96,6 +96,13 @@ while chans > 0:
               "konprann sa : Woch bat sizo - Sizo bat papye - Papye bat woch\n"
               "Wap gen pou antre yon epsedo ew pral jwe kont kompite a\n"
               "Bon chans, epi Byen chwazi\n")
+    elif str(antre) == 'Z' or str(antre) == 'z':
+        for el in {f'{name}': f'{sko_jwe_a}'}:
+            for i in {f'{name}': f'{sko_jwe_a}'}:
+                if el > i:
+                    print(i)
+        print('Meye sko a se : sk')
+        exit()
     else:
         if str(antre) != woch and str(antre) != sizo and str(antre) != papye:
             print()
